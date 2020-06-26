@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Db_Operations.Models.Student>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <table cellpadding="10">
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RollNO</td>
+                <td>@item.Name</td>
+                <td><button class="btn btn-primary" onclick="Pass(@item)">Edit</button></td>
+            </tr>
+        }
+    </table>
+<script>
+  //  data{"RollNo","Name"}
+   
+    function Pass(data) {
+        var student = JSON.parse(data);
+        alert(student.RollNo);
+        //webapi edit
+
+      
+
+    }
+
+</script>
